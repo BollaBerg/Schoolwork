@@ -11,10 +11,13 @@ All work included in this repo (and in general all work posted publicly on my Gi
 
 ### Spring 2022
 
-MA2002 - Bachelor's Project in Mathematical Studies
-IT3030 - Deep Learning
-IT3105 - Artificial Intelligence Programming
-MA2501 - Numerical Methods
+[MA2002 - Bachelor's Project in Mathematical Studies](https://github.com/BollaBerg/MA2002-Bachelor-project)
+
+[IT3030 - Deep Learning](https://github.com/BollaBerg/IT3030-Deep-learning)
+
+[IT3105 - Artificial Intelligence Programming](https://github.com/BollaBerg/IT3105-Artificial-Intelligence-Programming) ([including project 3](https://github.com/BollaBerg/IT3105-Project-3))
+
+[MA2501 - Numerical Methods](https://github.com/BollaBerg/MA2501-Numerical-methods)
 
 ## IMPORTANT
 You are **not** allowed to copy this work and hand it in as your own (i.e., *kok*). You **are**, however, allowed to use this as guidance if you are stuck on some work, as inspiration (but, again, not as a source for copying)!
