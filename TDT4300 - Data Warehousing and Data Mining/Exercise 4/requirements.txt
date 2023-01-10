@@ -1,0 +1,8 @@
+# python >= 3.8
+numpy==1.20.2
+pandas==1.2.4
+ipykernel==5.5.3
+
+# Used for a single piece of preprocessing in
+# supplied "encode_labels" in decision_tree_classifier.ipynb:
+sklearn==0.0

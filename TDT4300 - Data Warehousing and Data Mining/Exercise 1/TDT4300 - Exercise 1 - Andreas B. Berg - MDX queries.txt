@@ -1,0 +1,130 @@
+------------------------------------------ REPORT 1 ------------------------------------------ 
+-- The most common route in each year. (i.e. most frequent Start Station -> End Station)
+-- Updated (see PDF): The most frequent start station in each year 
+
+
+SELECT
+   GENERATE(
+      [start time].[time].[year],
+      TOPCOUNT(
+         [start time].[time].CURRENTMEMBER
+		* [start station].[station].[name].MEMBERS
+         , 1
+         , [Measures].[Trip count]
+      )
+   ) ON COLUMNS
+FROM
+   [TDT4300 - Øving 1]
+
+
+
+
+------------------------------------------ REPORT 2 ------------------------------------------ 
+-- The most busy months in each neighborhood.
+-- I assume that this means the months with most trips out of a neighborhood.
+
+
+SELECT
+   [start time].[time].[year] ON ROWS,
+   GENERATE(
+      NONEMPTY([start station].[station].[neighborhood].MEMBERS), 
+      TOPCOUNT(
+      	[start station].[station].CURRENTMEMBER
+		* [start time].[time].[month].MEMBERS
+      	, 1
+      	, [Measures].[Trip count]
+   	)
+   ) ON COLUMNS
+FROM
+   [TDT4300 - Øving 1]
+
+
+
+
+------------------------------------------ REPORT 3 ------------------------------------------ 
+-- The average trip duration, average revenue throughout months from 2015 to 2017
+
+
+SELECT
+   [start time].[time].[2015].FIRSTCHILD : [start time].[time].[2017].LASTCHILD on ROWS,
+   {[Measures].[Trip duration avg], [Measures].[Trip revenue avg]} on COLUMNS
+FROM
+   [TDT4300 - Øving 1]
+
+
+
+
+------------------------------------------ REPORT 4 ------------------------------------------ 
+-- Subscriber types generated the greatest revenue throughout the months of year 2014.
+
+
+SELECT
+   GENERATE(
+      [start time].[time].[2014].CHILDREN,
+      TOPCOUNT(
+         [start time].[time].CURRENTMEMBER * [Subscriber type].[type].[type]
+         , 1
+         , [Measures].[Trip price sum]
+      )
+   ) on ROWS,
+   [Measures].[Trip price sum] on COLUMNS
+FROM
+   [TDT4300 - Øving 1]
+
+
+
+
+------------------------------------------ REPORT 5 ------------------------------------------ 
+-- Average revenue generated from the stations (stations which are the start point or
+-- the end point of the trip) resides in ”Downtown” neighborhood throughout years 2014 to 2016.
+-- Updated: Average revenue generated from trips starting on each station in Downtown ...
+
+
+-- Combined average revenue (based on throughout):
+
+SELECT
+	-- Remove NONEMPTY to see all stations:
+   NONEMPTY([start station].[station].[Downtown].CHILDREN) on COLUMNS
+FROM (
+   SELECT [start time].[time].[2014].FIRSTCHILD
+	: [start time].[time].[2016].LASTCHILD on COLUMNS
+   FROM [TDT4300 - Øving 1]
+)
+WHERE
+   [Measures].[Trip revenue avg]
+
+
+
+-- Average revenue for each month in the years 2014-2016:
+
+SELECT
+	-- Remove NONEMPTY to see all stations:
+   NONEMPTY([start station].[station].[Downtown].CHILDREN) on ROWS,
+   [start time].[time].[2014].FIRSTCHILD
+	: [start time].[time].[2016].LASTCHILD on COLUMNS
+FROM 
+   [TDT4300 - Øving 1]
+WHERE
+   [Measures].[Trip revenue avg]
+
+
+
+
+------------------------------------------ REPORT 6 ------------------------------------------ 
+-- The most Busy hours in a day on a yearly basis in each neighborhood.
+
+
+SELECT
+   GENERATE(
+      NONEMPTY([start time].[time].[year]
+		* [start station].[station].[neighborhood]),
+      TOPCOUNT(
+         ([start time].[time].CURRENTMEMBER
+		, [start station].[station].CURRENTMEMBER)
+		* [start time].[time].[datetime]
+         , 1
+         , [Measures].[Trip count]
+      )
+   ) ON COLUMNS
+FROM
+   [TDT4300 - Øving 1]

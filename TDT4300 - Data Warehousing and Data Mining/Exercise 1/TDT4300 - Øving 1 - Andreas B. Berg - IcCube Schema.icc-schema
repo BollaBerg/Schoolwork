@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schemaFactory revisionNumber="152">
+    <schemaDefinition name="TDT4300 - Øving 1 - nonull" group="TDT4300" loadOnStartup="false">
+        <activateIncrementalLoad>false</activateIncrementalLoad>
+        <useUnknownMembersInFacts>true</useUnknownMembersInFacts>
+        <autoCleanUpTableColumns>false</autoCleanUpTableColumns>
+        <useFactPartitioning>false</useFactPartitioning>
+        <fileDS directory="C:/Users/andre/Documents/Skole/Skole 21.1 Vår/TDT4300 Datavarehus og datagruvedrift/Øvinger/Øving 1/data_nonull" checkColumnSize="false" name="Nonull" includeSynonyms="false">
+            <fileDataTable fileEncoding="UTF-8" tableName="trips.csv" rowLimit="-1" id="2b9f2d19-d445-49ca-b156-edb4d1975b76">
+                <column name="trip_id" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="bike_id" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="start_station_id" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="end_station_id" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="start_station_name" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="end_station_name" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="year" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="month" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="start_time" tableType="STRING" type="DATETIME" selected="true" primaryKey="false"/>
+                <column name="checkout_time" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="duration_minutes" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="subscriber_type" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="trip_price" tableType="STRING" type="SHORT" selected="true" primaryKey="false"/>
+                <addRowNumber>false</addRowNumber>
+                <stringDateConverter>yyyy-MM-dd_&amp;_yyyy-MM-dd hh:mm:ss</stringDateConverter>
+                <trimStrings>true</trimStrings>
+                <columnSeparator>,</columnSeparator>
+                <commentMarker>#</commentMarker>
+                <removeQuotes>false</removeQuotes>
+            </fileDataTable>
+            <fileDataTable fileEncoding="UTF-8" tableName="stations.csv" rowLimit="-1" id="0c16224f-7653-4556-b570-70d052dbf935">
+                <column name="station_id" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="name" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="city" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="region" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="neighborhood" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="street" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <column name="postcode" tableType="STRING" type="INTEGER" selected="true" primaryKey="false"/>
+                <column name="latitude" tableType="STRING" type="LONG" selected="true" primaryKey="false"/>
+                <column name="longitude" tableType="STRING" type="LONG" selected="true" primaryKey="false"/>
+                <column name="location" tableType="STRING" type="LONG" decorationType="ARRAY" selected="true" primaryKey="false"/>
+                <column name="status" tableType="STRING" type="STRING" selected="true" primaryKey="false"/>
+                <addRowNumber>false</addRowNumber>
+                <stringDateConverter>yyyy-MM-dd_&amp;_yyyy-MM-dd hh:mm:ss</stringDateConverter>
+                <trimStrings>true</trimStrings>
+                <columnSeparator>,</columnSeparator>
+                <commentMarker>#</commentMarker>
+                <removeQuotes>false</removeQuotes>
+            </fileDataTable>
+        </fileDS>
+        <multiLevelDimension dataTableId="2b9f2d19-d445-49ca-b156-edb4d1975b76" isTimeDimension="true" isDefaultTimeDimension="true" isIndexingByRange="false" id="6902338f-06ad-4143-a179-1eb739e59eed" name="start time">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="time" isDefault="true" uuid="c42c73f8-8541-4e7b-8ae6-8c160419a434">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="7ba6eff8-62ed-42cd-adad-87faf9f92599" name="year" levelType="YEAR" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="year"/>
+                    <orderType>BY_COLUMN</orderType>
+                    <orderColumn name="year"/>
+                </level>
+                <level uuid="463f657e-4a71-4405-9282-3ab495406d1d" name="month" levelType="MONTH" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="month"/>
+                    <orderType>BY_COLUMN</orderType>
+                    <orderColumn name="month"/>
+                </level>
+                <level uuid="feeb722f-7890-4b30-b3bb-b85a486d4428" name="datetime" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="start_time"/>
+                    <orderType>BY_NAME</orderType>
+                    <orderKind>ASC</orderKind>
+                </level>
+            </multiLevelHierarchy>
+        </multiLevelDimension>
+        <dimension dataTableId="0c16224f-7653-4556-b570-70d052dbf935" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="ac9a5306-4130-4c86-a2e2-64171cc4ccae" name="start station">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="station" isDefault="true" uuid="124a185f-4fb9-428f-9903-b36f404379d1">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="3afba7f3-6807-48ea-9a60-03eaad782973" name="region" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="region"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="0716d2ee-c287-4e26-b178-aa0f4e528d01" name="city" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="city"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="ae2d2169-e1ce-406e-afe1-db3286b4cd6e" name="neighborhood" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="neighborhood"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="82f19e37-86da-450b-b5d7-9a4e557fdd2c" name="street" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="street"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="a5d441fd-fd5e-4264-ad50-cb9cf84a1b3a" name="name" nameUnique="true" nameUniqueInParent="false" keyUnique="true" ignoreNameCollision="false">
+                    <column name="station_id"/>
+                    <nameCol name="name"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="postcode" isDefault="false" uuid="8fb52356-f446-4a1b-b797-6a804d96f1cb">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="46f516f2-cc15-4110-879f-3f9fc10d59e2" name="region" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="region"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="69b019bd-9fb5-440b-9ae4-bf149d68b0ed" name="city" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="city"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="0c9bc32d-c14d-4cea-8285-74ac44f8942c" name="postcode" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <column name="station_id"/>
+                    <nameCol name="postcode"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </dimension>
+        <dimension dataTableId="0c16224f-7653-4556-b570-70d052dbf935" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="f1eaeac7-148d-48ea-a1aa-b29060a005fa" name="end station">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="station" isDefault="true" uuid="9032f268-0624-41cd-9d52-dd2fec0806c3">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="160ec6ab-1c7c-45b4-b69a-937cd96548eb" name="region" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="region"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="db198928-2b42-4b42-a0c2-8a0b04a4fd60" name="city" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="city"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="a2c69368-50ef-4cc9-a4fd-62cfef98ec98" name="neighborhood" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="neighborhood"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="2354ffb1-ca06-4a88-adc7-e23bb00042e4" name="street" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="street"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="f5579394-3bc3-491f-bf3f-153970466c1a" name="name" nameUnique="false" nameUniqueInParent="false" keyUnique="true" ignoreNameCollision="false">
+                    <column name="station_id"/>
+                    <nameCol name="name"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="postcode" isDefault="false" uuid="e9181e23-afbb-4971-8f18-76994aa812bf">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="186c20e0-7b90-4ed3-bed5-8d532ed64dbb" name="region" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="region"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="7eaa0ac8-4bd1-4e92-bac2-746e8cbc6e72" name="city" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="city"/>
+                    <orderType>NONE</orderType>
+                </level>
+                <level uuid="0f9e88d6-f85b-425a-ba92-5838f7c35adf" name="postcode" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <column name="station_id"/>
+                    <nameCol name="postcode"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </dimension>
+        <dimension dataTableId="2b9f2d19-d445-49ca-b156-edb4d1975b76" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="a8d8d914-0219-46da-8a92-65f003648ef6" name="trip duration">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="duration" isDefault="true" uuid="85088c5c-ad2c-44bf-b895-dcbab5ba3ac1">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="249cd0eb-7a84-44bd-a294-3fb98c0e8749" name="duration" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="duration_minutes"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </dimension>
+        <multiLevelDimension dataTableId="2b9f2d19-d445-49ca-b156-edb4d1975b76" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="f2b5ec82-ce6f-43b3-9531-521dee99fc08" name="trip price">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="price" isDefault="true" uuid="f6e80e62-b6f6-486f-829b-c06f15f0f087">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="4ba5f835-81a9-4aa2-803b-95fefb660670" name="price" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="trip_price"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </multiLevelDimension>
+        <multiLevelDimension dataTableId="2b9f2d19-d445-49ca-b156-edb4d1975b76" isTimeDimension="false" isDefaultTimeDimension="false" isIndexingByRange="false" id="d74b1814-8886-4789-bbc0-d221ca845b81" name="subscriber type">
+            <multiLevelHierarchy hasAllLevel="true" allLevelName="All-Level" allMemberName="All" name="type" isDefault="true" uuid="28f792ae-53ec-4bf4-b9b0-5860f6aee1aa">
+                <factAggregationType>MEMBER_AND_ANCESTORS</factAggregationType>
+                <level uuid="85780060-82ea-4762-9590-4f904c0b3513" name="type" nameUnique="false" nameUniqueInParent="false" keyUnique="false" ignoreNameCollision="false">
+                    <nameCol name="subscriber_type"/>
+                    <orderType>NONE</orderType>
+                </level>
+            </multiLevelHierarchy>
+        </multiLevelDimension>
+        <cube id="8ec3c8d8-c993-40f3-bbad-dd43b0e03583" name="TDT4300 - Øving 1">
+            <defaultFacts uuid="81e5db2b-d2a1-4ca0-986a-cfc78de5b0c9" measureGroupName="Øving 1" partitioningType="NONE" newGeneration="true" dataTableId="2b9f2d19-d445-49ca-b156-edb4d1975b76" aggregateDataSourceFacts="false" unresolvedRowsBehavior="ERROR">
+                <rowFactAggregationType>ADD_ROW</rowFactAggregationType>
+                <measure uuid="1dfff31b-3a1f-4b1b-a99a-508ddae70670" name="Trip count" aggregationType="COUNT">
+                    <dataColumn name="trip_id"/>
+                </measure>
+                <measure uuid="71c2f31a-4a10-47ee-9873-5bf9a59ef49c" name="Trip price sum" aggregationType="SUM">
+                    <dataColumn name="trip_price"/>
+                    <cellProperties></cellProperties>
+                </measure>
+                <measure uuid="ae967111-7d65-4080-ab3b-8266bd80e8c2" name="Trip duration avg" aggregationType="AVG_LEAVES">
+                    <dataColumn name="duration_minutes"/>
+                </measure>
+                <measure uuid="a806a48a-773b-40f4-926d-4a96933e2871" name="Trip revenue avg" aggregationType="AVG_LEAVES">
+                    <dataColumn name="trip_price"/>
+                </measure>
+                <links dimensionId="f1eaeac7-148d-48ea-a1aa-b29060a005fa">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="end_station_id"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="ac9a5306-4130-4c86-a2e2-64171cc4ccae">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="start_station_id"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="6902338f-06ad-4143-a179-1eb739e59eed">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="start_time"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="d74b1814-8886-4789-bbc0-d221ca845b81">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="subscriber_type"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="a8d8d914-0219-46da-8a92-65f003648ef6">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="duration_minutes"/>
+                    </viewLinks>
+                </links>
+                <links dimensionId="f2b5ec82-ce6f-43b3-9531-521dee99fc08">
+                    <viewLinks type="LAST_LEVEL">
+                        <toColumns name="trip_price"/>
+                    </viewLinks>
+                </links>
+            </defaultFacts>
+        </cube>
+        <localization enabled="false"/>
+        <script>
+            <content>-- 
+-- Drop all calc. members, sets and functions declared at schema/cube levels. 
+-- 
+
+DROP *
+
+</content>
+        </script>
+    </schemaDefinition>
+</schemaFactory>
