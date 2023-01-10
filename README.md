@@ -28,11 +28,38 @@ All work included in this repo (and in general all work posted publicly on my Gi
 
 ### Spring 2021
 
-[TDT4171 - Methods in Artificial Intelligence](https://github.com/BollaBerg/TDT4171)
+[TDT4171 - Methods in Artificial Intelligence](TDT4171%20-%20Methods%20in%20Artificial%20Intelligence)
+
+[TDT4300 - Data Warehousing and Data Mining](TDT4300%20-%20Data%20Warehousing%20and%20Data%20Mining)
 
 ### Fall 2020
 
-TDT4136 - Introduction to Artificial Intelligence ([assignment 1](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar), [assignment 3](https://github.com/BollaBerg/TDT4136---Assignment-3---Minmax-and-Alpha-Beta-Pruning), [assignment 4](https://github.com/BollaBerg/BollaBerg-TDT4136---Assignment-4---Constraint-Satisfaction-Problems))
+TDT4136 - Introduction to Artificial Intelligence ([assignment 1](TDT4136%20-%20Assignment%201%20-%20AI%20fundamentals%20-%20Andreas%20B.%20Berg.pdf), [assignment 2](https://github.com/BollaBerg/TDT4136---Assignment-2---AStar), [assignment 3](https://github.com/BollaBerg/TDT4136---Assignment-3---Minmax-and-Alpha-Beta-Pruning), [assignment 4](https://github.com/BollaBerg/BollaBerg-TDT4136---Assignment-4---Constraint-Satisfaction-Problems))
+
+### Spring 2020
+
+[TFY4107 - Physics](TFY4107%20-%20Physics%20-%20Report.pdf)
+
+### Fall 2019
+
+[TMA4140 - Discrete Mathematics](TMA4140%20-%20Discrete%20Mathematics)
+
+### Fall 2018
+
+[ST1201 - Statistical Methods](ST1201%20-%20Statistical%20Methods)
+
+[TMA4120 - Mathematics 4K](TMA4120%20-%20Mathematics%204K)
+
+### Spring 2018
+
+[MA1102 - Basic Calculus 2](MA1102%20-%20Basic%20Calculus%202)
+
+[MA1103 - Vector Calculus](MA1103%20-%20Vector%20Calculus)
+
+[MA1202 - Linear Algebra with Applications](MA1202%20-%20Linear%20Algebra%20with%20Applications)
+
+[ST1101 - Probability and Statistics](ST1101%20-%20Probability%20and%20Statistics)
+
 
 ## IMPORTANT
 You are **not** allowed to copy this work and hand it in as your own (i.e., *kok*). You **are**, however, allowed to use this as guidance if you are stuck on some work, as inspiration (but, again, not as a source for copying)!
