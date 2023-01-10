@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="X0">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="X1">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<parents>X0</parents>
+			<probabilities>0.8 0.2 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="X2">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<parents>X1</parents>
+			<probabilities>0.8 0.2 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="X3">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<parents>X2</parents>
+			<probabilities>0.8 0.2 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="X4">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<parents>X3</parents>
+			<probabilities>0.8 0.2 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="X5">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<parents>X4</parents>
+			<probabilities>0.8 0.2 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="X6">
+			<state id="Fish" />
+			<state id="NoFish" />
+			<parents>X5</parents>
+			<probabilities>0.8 0.2 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="e1">
+			<state id="Bird" />
+			<state id="NoBird" />
+			<parents>X1</parents>
+			<probabilities>0.75 0.25 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="e2">
+			<state id="Bird" />
+			<state id="NoBird" />
+			<parents>X2</parents>
+			<probabilities>0.75 0.25 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="e3">
+			<state id="Bird" />
+			<state id="NoBird" />
+			<parents>X3</parents>
+			<probabilities>0.75 0.25 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="e4">
+			<state id="Bird" />
+			<state id="NoBird" />
+			<parents>X4</parents>
+			<probabilities>0.75 0.25 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="e5">
+			<state id="Bird" />
+			<state id="NoBird" />
+			<parents>X5</parents>
+			<probabilities>0.75 0.25 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="e6">
+			<state id="Bird" />
+			<state id="NoBird" />
+			<parents>X6</parents>
+			<probabilities>0.75 0.25 0.2 0.8</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.6128.0 ACADEMIC" name="Network2">
+			<node id="X0">
+				<name>X0</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>160 280 264 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="X1">
+				<name>X1</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>300 280 404 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="X2">
+				<name>X2</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>440 280 544 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="X3">
+				<name>X3</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>600 280 704 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="X4">
+				<name>X4</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>740 280 844 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="X5">
+				<name>X5</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>880 280 984 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="X6">
+				<name>X6</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1020 280 1124 372</position>
+				<barchart active="true" />
+			</node>
+			<node id="e1">
+				<name>e1</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>300 420 400 500</position>
+				<barchart active="true" />
+			</node>
+			<node id="e2">
+				<name>e2</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>440 420 540 500</position>
+				<barchart active="true" />
+			</node>
+			<node id="e3">
+				<name>e3</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>600 420 700 500</position>
+				<barchart active="true" />
+			</node>
+			<node id="e4">
+				<name>e4</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>740 420 840 500</position>
+				<barchart active="true" />
+			</node>
+			<node id="e5">
+				<name>e5</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>880 420 980 500</position>
+				<barchart active="true" />
+			</node>
+			<node id="e6">
+				<name>e6</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>1020 420 1120 500</position>
+				<barchart active="true" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

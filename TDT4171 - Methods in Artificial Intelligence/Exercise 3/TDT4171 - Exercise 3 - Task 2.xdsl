@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="can_get_loan">
+			<state id="yes_entire_sum" />
+			<state id="yes_expensive" />
+			<state id="no" />
+			<probabilities>0.3 0.1 0.6</probabilities>
+		</cpt>
+		<cpt id="Have_I_role_at_Studentersamfundet">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Studies_at_Gløshaugen">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<decision id="Distance_from_Studentersamfundet">
+			<state id="less_than_10_min" />
+			<state id="between_10_to_20_min" />
+			<state id="more_than_20_min" />
+			<parents>Have_I_role_at_Studentersamfundet Studies_at_Gløshaugen</parents>
+		</decision>
+		<cpt id="Budget">
+			<state id="less_than_3_mill" />
+			<state id="between_3_and_4_mill" />
+			<state id="more_than_4_mill" />
+			<parents>can_get_loan</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.3333333333333333 0.3333333333333333 0.3333333333333333</probabilities>
+		</cpt>
+		<cpt id="Available_apartments">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Distance_from_Studentersamfundet Budget</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<decision id="MoveIn">
+			<state id="live_separate" />
+			<state id="rent_together" />
+			<state id="buy_together" />
+			<parents>can_get_loan Available_apartments</parents>
+		</decision>
+		<cpt id="Time_spent_walking">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Distance_from_Studentersamfundet</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Time_together">
+			<state id="lt_1hr_per_day" />
+			<state id="between_1_to_3_hrs_pr_day" />
+			<state id="more_than_3_hrs_pr_day" />
+			<parents>MoveIn Time_spent_walking Have_I_role_at_Studentersamfundet</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<cpt id="Fights">
+			<state id="Fight" />
+			<state id="No_fight" />
+			<parents>Time_together</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="U8">
+			<parents>Fights</parents>
+			<utilities>-5000 0</utilities>
+		</utility>
+		<cpt id="COVID_19">
+			<state id="Getting_COVID" />
+			<state id="Not_getting_COVID" />
+			<parents>MoveIn Have_I_role_at_Studentersamfundet</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="U2">
+			<parents>COVID_19</parents>
+			<utilities>-3500 0</utilities>
+		</utility>
+		<cpt id="Freedom_to_decorate">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>MoveIn</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Quality_of_inventory">
+			<state id="Poor" />
+			<state id="Good" />
+			<parents>Freedom_to_decorate</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="U1_2">
+			<parents>Quality_of_inventory</parents>
+			<utilities>0 200</utilities>
+		</utility>
+		<cpt id="balanced_diet">
+			<state id="Balanced_diet" />
+			<state id="Unbalanced_diet" />
+			<parents>MoveIn</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="U3">
+			<parents>balanced_diet</parents>
+			<utilities>0 700</utilities>
+		</utility>
+		<utility id="U6_2">
+			<parents>Time_together</parents>
+			<utilities>-3000 0 2000</utilities>
+		</utility>
+		<cpt id="Noise">
+			<state id="low_noise" />
+			<state id="high_noise" />
+			<parents>Distance_from_Studentersamfundet</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="U4">
+			<parents>Noise</parents>
+			<utilities>0 -600</utilities>
+		</utility>
+		<cpt id="View">
+			<state id="nice_view" />
+			<state id="no_view" />
+			<parents>Distance_from_Studentersamfundet</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<utility id="U5_2">
+			<parents>View</parents>
+			<utilities>400 0</utilities>
+		</utility>
+		<cpt id="Monthly_rent___payments">
+			<state id="low_lt_4500" />
+			<state id="moderate_4500_to_5500" />
+			<state id="high_over_5500" />
+			<parents>MoveIn View Noise Distance_from_Studentersamfundet</parents>
+			<probabilities>0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0 0.5 0.5 0</probabilities>
+		</cpt>
+		<utility id="U4_2">
+			<parents>Monthly_rent___payments</parents>
+			<utilities>1000 0 -1000</utilities>
+		</utility>
+		<mau id="U">
+			<parents>U1_2 U2 U3 U8 U6_2 U4 U5_2 U4_2</parents>
+			<weights>1 1 1 1 1 1 1 1</weights>
+		</mau>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 3.0.6128.0 ACADEMIC" name="Network1">
+			<node id="MoveIn">
+				<name>Move in with Girlfriend</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>277 237 443 325</position>
+			</node>
+			<node id="can_get_loan">
+				<name>Can get loan from bank</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>83 300 200 373</position>
+			</node>
+			<node id="Time_together">
+				<name>Time together</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 609 696 682</position>
+			</node>
+			<node id="Fights">
+				<name>Fights</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 701 696 774</position>
+			</node>
+			<node id="U8">
+				<name>U8</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 699 891 776</position>
+			</node>
+			<node id="COVID_19">
+				<name>Getting COVID-19</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 151 696 224</position>
+			</node>
+			<node id="U2">
+				<name>U2</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 148 891 225</position>
+			</node>
+			<node id="Freedom_to_decorate">
+				<name>Freedom to decorate home</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>384 60 501 133</position>
+			</node>
+			<node id="Quality_of_inventory">
+				<name>Quality of inventory</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 60 696 133</position>
+			</node>
+			<node id="U1_2">
+				<name>U1</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 57 891 134</position>
+			</node>
+			<node id="balanced_diet">
+				<name>Balanced diet</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 243 696 316</position>
+			</node>
+			<node id="U3">
+				<name>U3</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 240 891 317</position>
+			</node>
+			<node id="Distance_from_Studentersamfundet">
+				<name>Distance from Studentersamfundet and Gløshaugen</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>295 523 429 584</position>
+			</node>
+			<node id="Time_spent_walking">
+				<name>Time spent walking</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>384 609 501 682</position>
+			</node>
+			<node id="U6_2">
+				<name>U7</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 607 891 684</position>
+			</node>
+			<node id="Have_I_role_at_Studentersamfundet">
+				<name>Do I work at Studentersamfundet</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>83 715 200 788</position>
+			</node>
+			<node id="U">
+				<name>U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>998 360 1128 488</position>
+			</node>
+			<node id="Studies_at_Gløshaugen">
+				<name>Do I study at Gløshaugen</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>83 517 200 590</position>
+			</node>
+			<node id="Available_apartments">
+				<name>Available apartments</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>302 412 419 485</position>
+			</node>
+			<node id="Noise">
+				<name>Noise</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 334 696 407</position>
+			</node>
+			<node id="U4">
+				<name>U4</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 332 891 409</position>
+			</node>
+			<node id="View">
+				<name>View</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 517 696 590</position>
+			</node>
+			<node id="U5_2">
+				<name>U6</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 515 891 592</position>
+			</node>
+			<node id="Monthly_rent___payments">
+				<name>Monthly rent / payments</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 426 696 499</position>
+			</node>
+			<node id="U4_2">
+				<name>U5</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>824 423 891 500</position>
+			</node>
+			<node id="Budget">
+				<name>Budget</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>83 412 200 485</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
