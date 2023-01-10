@@ -15,7 +15,7 @@ All work included in this repo (and in general all work posted publicly on my Gi
 
 [IT3030 - Deep Learning](https://github.com/BollaBerg/IT3030-Deep-learning)
 
-[IT3105 - Artificial Intelligence Programming](https://github.com/BollaBerg/IT3105-Artificial-Intelligence-Programming) ([including project 3](https://github.com/BollaBerg/IT3105-Project-3), which is private due to being a collaborative project)
+[IT3105 - Artificial Intelligence Programming](https://github.com/BollaBerg/IT3105-Artificial-Intelligence-Programming) ([including project 3](https://github.com/BollaBerg/IT3105-Project-3)) (Both private due to being collaborative projects)
 
 [MA2501 - Numerical Methods](https://github.com/BollaBerg/MA2501-Numerical-methods)
 
