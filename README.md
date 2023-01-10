@@ -7,5 +7,14 @@ Gathered here for two reasons:
 
 All work included in this repo (and in general all work posted publicly on my Github) is uploaded as is. I can not guarantee that the work is fully correct, although I have passed all courses included here. Some assignments were not fully completed, mostly due to time constraints, but all work is done to the best of my abilities (at the time).
 
+## Courses
+
+### Spring 2022
+
+MA2002 - Bachelor's Project in Mathematical Studies
+IT3030 - Deep Learning
+IT3105 - Artificial Intelligence Programming
+MA2501 - Numerical Methods
+
 ## IMPORTANT
 You are **not** allowed to copy this work and hand it in as your own (i.e., *kok*). You **are**, however, allowed to use this as guidance if you are stuck on some work, as inspiration (but, again, not as a source for copying)!
