@@ -15,9 +15,24 @@ All work included in this repo (and in general all work posted publicly on my Gi
 
 [IT3030 - Deep Learning](https://github.com/BollaBerg/IT3030-Deep-learning)
 
-[IT3105 - Artificial Intelligence Programming](https://github.com/BollaBerg/IT3105-Artificial-Intelligence-Programming) ([including project 3](https://github.com/BollaBerg/IT3105-Project-3)) (Both private due to being collaborative projects)
+[IT3105 - Artificial Intelligence Programming](https://github.com/BollaBerg/IT3105-Artificial-Intelligence-Programming) (including [project 3](https://github.com/BollaBerg/IT3105-Project-3)) (Both private due to being collaborative projects)
 
 [MA2501 - Numerical Methods](https://github.com/BollaBerg/MA2501-Numerical-methods)
+
+
+### Fall 2021
+
+[TDT4216 - Applied Data Science](https://github.com/BollaBerg/TDT4216-Applied-Data-Science) (Private due to being collaborative project)
+
+[TDT4173 - Machine Learning](https://github.com/BollaBerg/TDT4173-Machine-learning) (including [task 1](https://github.com/BollaBerg/tdt4173-2021-task-1))
+
+### Spring 2021
+
+[TDT4171 - Methods in Artificial Intelligence](https://github.com/BollaBerg/TDT4171)
+
+### Fall 2020
+
+TDT4136 - Introduction to Artificial Intelligence ([assignment 1](https://github.com/BollaBerg/TDT4136---Assignment-1---AStar), [assignment 3](https://github.com/BollaBerg/TDT4136---Assignment-3---Minmax-and-Alpha-Beta-Pruning), [assignment 4](https://github.com/BollaBerg/BollaBerg-TDT4136---Assignment-4---Constraint-Satisfaction-Problems))
 
 ## IMPORTANT
 You are **not** allowed to copy this work and hand it in as your own (i.e., *kok*). You **are**, however, allowed to use this as guidance if you are stuck on some work, as inspiration (but, again, not as a source for copying)!
