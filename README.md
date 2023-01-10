@@ -1,5 +1,5 @@
 # Schoolwork
-A collection of schoolwork conducted at NTNU since 2017.
+A collection of some schoolwork conducted at NTNU since 2017. Note that this does not include all coursework I have done, but rather a selection of the work that can be useful for others.
 
 Gathered here for two reasons:
 1. To give myself an overview of courses I have had, so I know where too look for previous work.
