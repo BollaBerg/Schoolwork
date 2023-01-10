@@ -9,6 +9,12 @@ All work included in this repo (and in general all work posted publicly on my Gi
 
 ## Courses
 
+### Fall 2022
+
+[TIØ4562 - Specialization Project](https://github.com/BollaBerg/TIO4562---Specialization-Project)
+
+[TIØ4567 - Specialization Course](https://github.com/BollaBerg/TIO4567---Specialization-Course)
+
 ### Spring 2022
 
 [MA2002 - Bachelor's Project in Mathematical Studies](https://github.com/BollaBerg/MA2002-Bachelor-project)
